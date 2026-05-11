@@ -1,9 +1,7 @@
 FROM denoland/deno:alpine-1.37.0
 WORKDIR /app
 COPY . .
-# Tunahamia ndani ya folda lenye kodi zako
-WORKDIR /app/Secure_Payment_Integration_System
-RUN deno cache main.ts
-EXPOSE 5000
-CMD ["run", "--allow-net", "--allow-env", "main.ts"]
+# Hii itatafuta na kuwasha faili lako popote lilipo
+CMD ["sh", "-c", "find . -name main.ts -exec deno run --allow-net --allow-env {} +"]
+ 
  
